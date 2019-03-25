@@ -20,7 +20,7 @@ dpkg -i google-chrome-stable_current_amd64.deb
 `cfdisk /dev/sdx`
 #### Read the S.M.A.R.T. information of a disk
 ```
-apt install smartmontools
+(apt install smartmontools)
 smartctl -a /dev/sdx
 ```
 #### Check whether T.R.I.M. is enabled or disabled on the SSD:
