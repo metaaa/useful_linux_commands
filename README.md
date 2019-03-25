@@ -25,6 +25,8 @@ smartctl -a /dev/sdx
 ```
 #### Check whether T.R.I.M. is enabled or disabled on the SSD:
 `hdparm -I /dev/sdx`
+#### Display active, non-swap partitions
+`df`
 #### Create user
 `adduser user_name`
 #### Add user to the sudoers group
@@ -45,13 +47,36 @@ smartctl -a /dev/sdx
      set mouse=r
 `endif
 ```
-#### Display active, non-swap partitions
-`df`
+#### Basic file viewer to display contents of a file
+`less path/to/file`
 #### Find a file with the extension .asd in the current directory
 `find . "*.asd"`
-#### Basic file viewer
-`less file`
 #### To display a file's first n row
 `head -n path/to/file`
 #### To display a file's last n row
 `tail -n path/to/file`
+#### Counts lines, words and characters in a file
+`wc path/to/file`
+#### Query a domain's DNS zone records and name servers
+`host -a example.domain`
+
+or
+
+```
+(apt install dnsutils)
+dig example.domain
+```
+#### Query a domain's name servers
+`host -t ns example.domain`
+
+changing the word 'ns' to 'a' will display the A records, 'cname' will display CNAME the records, 'mx' will diplay the MX records, etc
+#### Query a domain's DNS data on a given name server
+```
+(apt install dnsutils)
+dig example.domain @name.server
+```
+#### Display the ports the given server listens to
+```
+(apt install nmap)
+nmap ip.of.server
+```
