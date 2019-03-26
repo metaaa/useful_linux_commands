@@ -69,14 +69,25 @@ dig example.domain
 #### Query a domain's name servers
 `host -t ns example.domain`
 
+or
+
+`dig example.domain ns +noall + answer`
+
 changing the word 'ns' to 'a' will display the A records, 'cname' will display CNAME the records, 'mx' will diplay the MX records, etc
 #### Query a domain's DNS data on a given name server
-```
-(apt install dnsutils)
-dig example.domain @name.server
-```
+`dig example.domain @name.server`
+#### Query a domain's DNS records using a pre-defined name server
+`dig @nsx.example.ns example.domain`
 #### Display the ports the given server listens to
 ```
 (apt install nmap)
 nmap ip.of.server
 ```
+#### Remote connect using SSH
+`ssh user@ip.of.remote.device`
+#### Copy file using SSH
+
+From B to A (logged in as A)
+`scp username@ip.of.b.device:/path/to/file /path/to/file`
+From B to A (logged in as B)
+`scp path/to/file username@ip.of.a.device:/path/to/file`
