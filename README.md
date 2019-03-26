@@ -12,11 +12,13 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
 ```
 ### commands
-#### List the attached disks: 
+#### List the attached disks
 `fdisk -l`
+#### How to identify physical disks using serial number
+`lsblk -do +VENDOR,MODEL,SERIAL`
 #### Check and flag bad blocks of a disk:
 `badblocks -ws /dev/sdx`
-#### Interactive tool to create and modify partition table, partitions, etc of a disk:
+#### Interactive tool to create and modify partition table, partitions, etc of a disk
 `cfdisk /dev/sdx`
 #### Read the S.M.A.R.T. information of a disk
 ```
@@ -27,6 +29,8 @@ smartctl -a /dev/sdx
 `hdparm -I /dev/sdx`
 #### Display active, non-swap partitions
 `df`
+#### Command to test the CPU without the need of any additional package (cause 100% usage on the given cores)
+`for i in 1 2 3 4; do while : ; do : ; done & done`
 #### Create user
 `adduser user_name`
 #### Add user to the sudoers group
@@ -86,8 +90,10 @@ nmap ip.of.server
 #### Remote connect using SSH
 `ssh user@ip.of.remote.device`
 #### Copy file using SSH
-
 From B to A (logged in as A)
+
 `scp username@ip.of.b.device:/path/to/file /path/to/file`
+
 From B to A (logged in as B)
+
 `scp path/to/file username@ip.of.a.device:/path/to/file`
