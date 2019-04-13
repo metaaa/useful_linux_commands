@@ -99,3 +99,5 @@ From B to A (logged in as B)
 `scp path/to/file username@ip.of.a.device:/path/to/file`
 #### Create password hash
 `mkpasswd -m sha-256 password`
+#### Compare two directory's content (prints the filenames that are in dir1 only into a file)
+`diff -r dir1 dir2 | grep dir1 | awk '{print $4}' > difference1.txt`
