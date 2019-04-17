@@ -11,6 +11,28 @@
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
 ```
+#### How to set up SSH on debian live
+```
+sudo apt update
+sudo apt install openssh-server
+sudo service ssh start
+```
+#### How to enable mouse support in Vim
+1. Create the file /etc/vim/vimrc.local:
+  ```
+  vim /etc/vim/vimrc.local
+  ```
+2. Paste the followings into the file and save it:
+  ```
+  " Load the defaults
+  source /usr/share/vim/vim80/defaults.vim
+  " Prevent the defaults from being loaded again later
+  let skip_defaults_vim = 1
+  " Set the mouse mode to 'r'
+  if has('mouse')
+     set mouse=r
+`endif
+```
 ### commands
 #### List the attached disks
 `fdisk -l`
@@ -35,22 +57,6 @@ smartctl -a /dev/sdx
 `adduser user_name`
 #### Add user to the sudoers group
 `usermod -aG sudo user_name`
-#### How to enable mouse support in Vim
-1. Create the file /etc/vim/vimrc.local:
-  ```
-  vim /etc/vim/vimrc.local
-  ```
-2. Paste the followings into the file and save it:
-  ```
-  " Load the defaults
-  source /usr/share/vim/vim80/defaults.vim
-  " Prevent the defaults from being loaded again later
-  let skip_defaults_vim = 1
-  " Set the mouse mode to 'r'
-  if has('mouse')
-     set mouse=r
-`endif
-```
 #### Basic file viewer to display contents of a file
 `less path/to/file`
 #### Find a file with the extension .asd in the current directory
