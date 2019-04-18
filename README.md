@@ -38,7 +38,7 @@ sudo service ssh start
 `fdisk -l`
 #### How to identify physical disks using serial number
 `lsblk -do +VENDOR,MODEL,SERIAL`
-#### Check and flag bad blocks of a disk:
+#### Check and flag bad blocks of a disk (destructive test):
 `badblocks -ws /dev/sdx`
 #### Interactive tool to create and modify partition table, partitions, etc of a disk
 `cfdisk /dev/sdx`
@@ -51,6 +51,8 @@ smartctl -a /dev/sdx
 `hdparm -I /dev/sdx`
 #### Display active, non-swap partitions
 `df`
+#### Clone a USB stick
+`dd if=<your reference usb stick> of=<empty usb stick> bs=32M`
 #### Command to test the CPU without the need of any additional package (cause 100% usage on the given cores)
 `for i in 1 2 3 4; do while : ; do : ; done & done`
 #### Create user
