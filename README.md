@@ -63,12 +63,20 @@ smartctl -a /dev/sdx
 `less path/to/file`
 #### Find a file with the extension .asd in the current directory
 `find . "*.asd"`
+#### Execute command on files found by find command
+`find -iname "myfile.c" -exec md5sum {} \;`
+#### Search for a given string in all files recursively
+`grep -r "string" *`
 #### To display a file's first n row
 `head -n path/to/file`
 #### To display a file's last n row
 `tail -n path/to/file`
 #### Counts lines, words and characters in a file
 `wc path/to/file`
+#### Open a file in read only mode
+`vim -R file`
+#### Download all the URLs mentioned in the myURLs.txt file
+`cat myURLs.txt | xargs wget –c`
 #### Query a domain's DNS zone records and name servers
 `host -a example.domain`
 
@@ -109,3 +117,7 @@ From B to A (logged in as B)
 `mkpasswd -m sha-256 password`
 #### Compare two directory's content (prints the filenames that are in dir1 only into a file)
 `diff -r dir1 dir2 | grep dir1 | awk '{print $4}' > difference1.txt`
+#### Create new tar archive
+`tar cvf archive_name.tar dirname/`
+#### Extract tar archive
+`$ tar xvf archive_name.tar`
