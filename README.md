@@ -11,6 +11,8 @@
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
 ```
+#### Terminator - one of the best terminal utility with the possibility to split the workplace into more terminals
+`sudo apt install terminator`
 #### How to set up SSH on debian live
 ```
 sudo apt update
